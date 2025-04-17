@@ -295,5 +295,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Jürgen das ist nicht dein fehre, ich hab auch ein modul benütz, das heißt matplotlib, und in my IDE funktioniert aber in server nicht.
