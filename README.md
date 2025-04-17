@@ -1,4 +1,4 @@
-# 🎥 My Movies Database 🎬
+# 🎥 IMDb Movies Sample Database 🎬
 
 A simple and colorful command-line application for managing your personal movie collection using SQLite. With features like fuzzy search, statistics, and matplotlib-based histograms, this tool makes it fun and efficient to track and explore your favorite movies.
 
@@ -22,13 +22,28 @@ A simple and colorful command-line application for managing your personal movie 
 ---
 
 ## 🏗️ Project Structure
-
 ```bash
-IMDb-movieas
-    │ 
+  IMDb-movieas    
     ├── main.py # Main application script # 
     ├── terminal_styles.py # Custom terminal styling functions 
     ├── movies.db # SQLite database (auto-created on first run) 
     ├── requirements.txt # List of required Python libraries 
     └── README.md # Project documentation
+```
+
+---
+
+## 📦 Requirements
+
+- Python 3.7 or higher
+- Required libraries (install using pip):
+```yaml
+pip install -r requirements.txt
+```
+requirements.txt contents:
+
+```nginx
+fuzzywuzzy
+python-Levenshtein
+matplotlib
 ```
