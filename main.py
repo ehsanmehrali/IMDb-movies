@@ -1,5 +1,6 @@
 import random
 import sqlite3
+import sys
 
 from fuzzywuzzy import process
 from matplotlib import pyplot as plt
@@ -20,7 +21,8 @@ def initialize_db():
         CREATE TABLE IF NOT EXISTS movies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT UNIQUE,
-            rate REAL
+            rate REAL,
+            year INTEGER
         )
     """)
     conn.commit()
@@ -237,7 +239,9 @@ def menu():
     Displays the menu and asks the user to select a number from the menu.
 
     """
+    bye = lambda: (print("Bye!") or sys.exit())
     options = {
+        0: ("Exit", bye),
         1: ("List movies", show_all_movies),
         2: ("Add movie", add_movie),
         3: ("Delete movie", delete_movie),
@@ -278,9 +282,8 @@ def show_top_main_header():
     """
     It prints main top header in two rows, first row Title and second row imojis.
     """
-    print_announcements_msgs_with_yellow_background(
-        "********************************************* My Movies Database *********************************************")
-    print_emoji_chars_with_yellow_background('🎥🍿🎬🍿🎥')
+    print(
+        "********************************************* My Movies Database *********************************************\n")
 
 
 def main():
